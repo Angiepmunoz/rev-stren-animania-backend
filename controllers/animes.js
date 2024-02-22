@@ -1,10 +1,17 @@
 const express = require("express")
 const animes = express.Router();
 const animesArr = require("../data/animes")
+const { getAllAnimes } = require("../queries/animes.js")
 
 // GET all resources INDEX
-animes.get("/", (req, res) => {
-    res.status(200).json({payload: animesArr})
+animes.get("/", async (req, res) => {
+    try{
+        const allAnimes = await getAllAnimes();
+        res.status(200).json({payload: allAnimes})
+    }catch(error){
+        res.status(404).json({payload: error})
+    }
+    
 })
 
 // GET one resource SHOW

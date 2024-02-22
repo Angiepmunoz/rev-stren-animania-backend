@@ -4,6 +4,6 @@ const app = require("./app")
 require("dotenv").config();
 const PORT = process.env.PORT
 
-app.listen(PORT, ()=>{
+app.listen(PORT, ()=>{ // listens for request at a specific PORT 
     console.log(`Listening on PORT: ${PORT}`)
 })
