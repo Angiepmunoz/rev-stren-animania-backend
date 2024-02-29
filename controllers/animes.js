@@ -1,6 +1,6 @@
 const express = require("express");
 const animes = express.Router();
-const animesArr = require("../data/animes");
+// const animesArr = require("../data/animes");
 const {
   getAllAnimes,
   getOneAnime,
